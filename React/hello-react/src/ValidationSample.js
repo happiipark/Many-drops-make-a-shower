@@ -19,29 +19,17 @@ class ValidationSample extends Component {
       clicked: true,
       validated: this.state.password === "0000",
     });
-  };
-
-  onClick = () => {
-    this.setState({
-      clicked: true,
-      validated: this.state.password === "0000",
-    });
-  };
-
-  onKeyPress = (e) => {
-    if (e.key === "Enter") {
-      this.onClick();
-    }
+    this.input.focus();
   };
 
   render() {
     return (
       <div>
         <input
+          ref={(ref) => (this.input = ref)}
           type="password"
           value={this.state.password}
           onChange={this.handleChange}
-          onKeyPress={this.onKeyPress}
           className={
             this.state.clicked
               ? this.state.validated
