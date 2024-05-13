@@ -16,9 +16,13 @@
 //  src/styles.utils.scss 파일로 이동됨
 
 
-@import "./styles/utils";
+// @import "utils";
 .SassComponent {
-	display : flex;
+	display: flex;
+  background: $oc-gray-2;
+  @include media('<768px') {
+    background: $oc-gray-9;
+  }
 	.box { // 일반 CSS에서는 .SassComponent .box와 마찬가지
 		background : red;
 		cursor : pointer;
